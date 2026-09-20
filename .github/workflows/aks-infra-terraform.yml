@@ -47,7 +47,7 @@ jobs:
           TF_TOKEN_app_terraform_io: ${{ secrets.TF_API_TOKEN }}
 
       - name: Terraform Format Check
-        run: terraform fmt -check -recursive
+        run: terraform fmt -check --recursive # Ye sirf check karta hai ki code formatted hai ya nahi. Agar formatted nahi hai, pipeline fail karega.
 
       - name: Terraform Validate
         run: terraform validate
