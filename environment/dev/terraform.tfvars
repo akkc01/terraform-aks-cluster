@@ -44,6 +44,8 @@ aks_clusters = {
     dns_prefix = "devaksdns"
     rg_name    = "axion-app-aks-rg"
     location   = "koreacentral"
+    oidc_issuer_enabled       = true
+    workload_identity_enabled = true
 
     default_node_pool = {
       name                = "default"

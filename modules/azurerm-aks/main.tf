@@ -1,9 +1,11 @@
 resource "azurerm_kubernetes_cluster" "aks" {
-  for_each            = var.aks_clusters
-  name                = each.value.aks_name
-  location            = each.value.location
-  resource_group_name = each.value.rg_name
-  dns_prefix          = each.value.dns_prefix
+  for_each                  = var.aks_clusters
+  name                      = each.value.aks_name
+  location                  = each.value.location
+  resource_group_name       = each.value.rg_name
+  dns_prefix                = each.value.dns_prefix
+  oidc_issuer_enabled       = each.value.oidc_issuer_enabled
+  workload_identity_enabled = each.value.workload_identity_enabled
 
   default_node_pool {
     name                = each.value.default_node_pool.name

@@ -5,7 +5,9 @@ variable "aks_clusters" {
     location   = string
     dns_prefix = string
     rg_name    = string
-
+    oidc_issuer_enabled       = bool
+    workload_identity_enabled = bool
+    
     default_node_pool = object({
       name                = string
       node_count          = number
