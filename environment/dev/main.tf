@@ -6,7 +6,7 @@ module "rgs" {
 module "spn" {
   depends_on = [module.rgs]
   source     = "../../modules/service-principal"
-  spns   = var.spns
+  spns       = var.spns
 }
 
 module "acrs" {
@@ -22,12 +22,12 @@ module "aks" {
 }
 
 module "role_assignment" {
-    depends_on = [ module.rgs, module.acrs, module.aks,module.spn ]
-  source = "../../modules/azurerm-role-assignment"
+  depends_on      = [module.rgs, module.acrs, module.aks, module.spn]
+  source          = "../../modules/azurerm-role-assignment"
   role_assignment = var.role_assignment
-  spn_object_ids = module.spn.spn_object_ids
-  acr_ids       = module.acrs.acr_ids
-  aks_ids       = module.aks.aks_ids
-  kubelet_ids   = module.aks.kubelet_identity_object_ids
+  spn_object_ids  = module.spn.spn_object_ids
+  acr_ids         = module.acrs.acr_ids
+  aks_ids         = module.aks.aks_ids
+  kubelet_ids     = module.aks.kubelet_identity_object_ids
 }
 
