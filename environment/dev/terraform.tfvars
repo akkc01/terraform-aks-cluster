@@ -40,10 +40,10 @@ spns = {
 
 aks_clusters = {
   aks1 = {
-    aks_name   = "axion-app-aks"
-    dns_prefix = "devaksdns"
-    rg_name    = "axion-app-aks-rg"
-    location   = "koreacentral"
+    aks_name                  = "axion-app-aks"
+    dns_prefix                = "devaksdns"
+    rg_name                   = "axion-app-aks-rg"
+    location                  = "koreacentral"
     oidc_issuer_enabled       = true
     workload_identity_enabled = true
 

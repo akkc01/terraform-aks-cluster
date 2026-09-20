@@ -30,10 +30,10 @@ variable "acrs" {
 
 variable "aks_clusters" {
   type = map(object({
-    aks_name   = string
-    location   = string
-    dns_prefix = string
-    rg_name    = string
+    aks_name                  = string
+    location                  = string
+    dns_prefix                = string
+    rg_name                   = string
     oidc_issuer_enabled       = bool
     workload_identity_enabled = bool
 
