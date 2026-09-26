@@ -1,7 +1,6 @@
 module "rgs" {
   source          = "../../modules/azurerm-resource-group"
   resource_groups = var.resource_groups
-
 }
 module "spn" {
   depends_on = [module.rgs]
